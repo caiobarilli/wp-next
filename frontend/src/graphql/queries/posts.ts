@@ -1,4 +1,4 @@
-import { fetchAPI } from '@/utils/fetchAPI'
+import fetchAPI from '@/utils/fetchAPI'
 
 export async function getAllPostsForHome() {
   const data = await fetchAPI(

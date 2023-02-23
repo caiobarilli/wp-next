@@ -24,5 +24,6 @@ define('THEME_VERSION', wp_get_theme()->get('Version'));
 
 // Theme Support
 if (function_exists('add_theme_support')) {
+    add_theme_support('menus');
     add_theme_support('post-thumbnails');
 }

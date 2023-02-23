@@ -1,7 +1,13 @@
 import Head from 'next/head'
-import Main from '@/components/Main'
+import { GetStaticProps } from 'next'
+import { getAllPostsForHome } from '@/graphql/queries/posts'
+import { HomeProps } from '@/graphql/types/posts'
 
-export default function Home() {
+export default function Home({ allPosts: { edges } }: HomeProps) {
+  const heroPost = edges[0]?.node
+
+  console.log(edges)
+
   return (
     <>
       <Head>
@@ -10,8 +16,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <Main />
+      <div>{heroPost.title}</div>
     </>
   )
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const allPosts = await getAllPostsForHome()
+
+  return {
+    props: { allPosts },
+    revalidate: 10
+  }
 }

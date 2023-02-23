@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders a heading 1`] = `
+.c0 {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<h1
+  class="c0"
+>
+  Next Boilerplate
+</h1>
+`

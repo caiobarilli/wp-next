@@ -1,7 +1,4 @@
-/* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-
-// jest.config.js
 const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
@@ -10,27 +7,22 @@ const createJestConfig = nextJest({
 })
 
 // Add any custom config to be passed to Jest
-/** @type {import('jest').Config} */
 const customJestConfig = {
-  // Add more setup options before each test is run
-  // setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-  // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
-  moduleDirectories: ['node_modules', '<rootDir>/'],
-
-  // If you're using [Module Path Aliases](https://nextjs.org/docs/advanced-features/module-path-aliases),
-  // you will have to add the moduleNameMapper in order for jest to resolve your absolute paths.
-  // The paths have to be matching with the paths option within the compilerOptions in the tsconfig.json
-  // For example:
-
-  moduleNameMapper: {
-    '@/(.*)$': '<rootDir>/src/$1'
-  },
+  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   testEnvironment: 'jest-environment-jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
-  collectCoverageFrom: ['src/**/*.ts(x)?', '!src/**/stories.tsx.'],
-  setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
-  modulePaths: ['<rootDir>/src/'],
+  collectCoverageFrom: [
+    'src/**/*.ts(x)?',
+    '!**/src/pages/**/*.tsx/**',
+    '!**/src/styles/**/*.ts/**',
+    '!**/src/utils/**/*.tsx/**'
+  ],
+  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
+  moduleNameMapper: {
+    '^styled-components':
+      '<rootDir>/node_modules/styled-components/dist/styled-components.browser.cjs.js'
+  },
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
   }

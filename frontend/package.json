@@ -24,6 +24,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "styled-components": "^5.3.6",
+    "styled-icons": "^10.47.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
@@ -46,6 +47,7 @@
     "plop": "^3.1.2",
     "prettier": "2.8.4",
     "react-is": "^18.2.0",
+    "styled-media-query": "^2.1.2",
     "typescript-plugin-styled-components": "^2.0.0"
   }
 }

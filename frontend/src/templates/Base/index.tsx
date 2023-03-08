@@ -1,3 +1,4 @@
+import Logo from 'components/Logo'
 import Menu from 'components/Menu'
 import Footer from 'components/Footer'
 
@@ -13,6 +14,7 @@ const Base = ({ children }: BaseProps) => {
   return (
     <S.Wrapper>
       <Container larger>
+        <Logo />
         <Menu />
       </Container>
       <S.Content>{children}</S.Content>

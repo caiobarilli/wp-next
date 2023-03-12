@@ -1,4 +1,4 @@
-import { getStorageItem, setStorageItem } from '.'
+import { getStorageItem, setStorageItem, removeStorageItem } from '.'
 
 describe('getStorageItem()', () => {
   beforeEach(() => {
@@ -23,5 +23,19 @@ describe('setStorageItem()', () => {
     expect(window.localStorage.getItem('FRONTEND_darkTheme')).toStrictEqual(
       JSON.stringify(true)
     )
+  })
+})
+
+describe('removeStorageItem()', () => {
+  beforeEach(() => {
+    window.localStorage.clear()
+  })
+
+  it('should remove item from localStorage', () => {
+    window.localStorage.setItem('FRONTEND_darkTheme', JSON.stringify(false))
+
+    removeStorageItem('darkTheme')
+
+    expect(window.localStorage.getItem('FRONTEND_darkTheme')).toBeNull()
   })
 })

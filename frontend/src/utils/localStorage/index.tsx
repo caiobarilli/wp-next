@@ -11,3 +11,8 @@ export const setStorageItem = (key: string, value: string[] | boolean) => {
   const data = JSON.stringify(value)
   return window.localStorage.setItem(`${APP_KEY}_${key}`, data)
 }
+
+export const removeStorageItem = (key: string) => {
+  if (typeof window === 'undefined') return
+  window.localStorage.removeItem(`${APP_KEY}_${key}`)
+}

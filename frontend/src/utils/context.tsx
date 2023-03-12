@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from 'react'
 import { getStorageItem, setStorageItem } from 'utils/localStorage'
+import { isDarkMode } from 'utils'
 
 const THEME_COLOR_KEY = 'darkTheme'
 
@@ -25,7 +26,12 @@ export const ContextProvider: React.FunctionComponent<ProviderProps> = ({
 
   useEffect(() => {
     const data = getStorageItem(THEME_COLOR_KEY)
-    if (data) setIsDarkTheme(data)
+
+    if (data) {
+      setIsDarkTheme(data)
+    } else {
+      setIsDarkTheme(isDarkMode())
+    }
   }, [])
 
   const toggleTheme = () => {

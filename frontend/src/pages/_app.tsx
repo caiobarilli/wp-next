@@ -22,6 +22,7 @@ export default function App({ Component, pageProps, router }: CustomAppProps) {
 
 function AppWrapper({ Component, pageProps }: AppProps) {
   const { isDarkTheme } = useContext(Context)
+
   return (
     <ThemeProvider theme={isDarkTheme ? dark : theme}>
       <GlobalStyle />

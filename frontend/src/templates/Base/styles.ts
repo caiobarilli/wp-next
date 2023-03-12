@@ -19,6 +19,7 @@ export const SectionFooter = styled.section`
     margin-top: ${theme.spacings.large};
     padding-bottom: ${theme.spacings.xsmall};
     padding-top: ${theme.spacings.xxlarge};
+    color: ${theme.colors.secondary};
     background-color: ${theme.colors.primary};
   `}
 `

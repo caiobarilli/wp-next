@@ -25,15 +25,7 @@ const darkTheme = {
   },
   colors: {
     primary: '#000000',
-    secondary: '#FFFFFF',
-    mainBg: '#06092B',
-    lightBg: '#F2F2F2',
-    white: '#FAFAFA',
-    black: '#030517',
-    lightGray: '#EAEAEA',
-    gray: '#8F8F8F',
-    darkGray: '#2E2F42',
-    red: '#EE3711'
+    secondary: '#FFFFFF'
   },
   spacings: {
     xxsmall: '0.8rem',

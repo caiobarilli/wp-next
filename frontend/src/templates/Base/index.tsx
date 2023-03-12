@@ -1,5 +1,6 @@
 import Logo from 'components/Logo'
 import Menu from 'components/Menu'
+import TopNavigation from 'components/TopNavigation'
 import Footer from 'components/Footer'
 
 import { Container } from 'components/Container'
@@ -14,6 +15,7 @@ const Base = ({ children }: BaseProps) => {
   return (
     <S.Wrapper>
       <Container larger>
+        <TopNavigation />
         <Logo />
         <Menu />
       </Container>

@@ -1,11 +1,9 @@
-import { render, screen } from '@testing-library/react'
-
+import { renderWithTheme } from 'utils/tests/helpers'
+import { screen } from '@testing-library/react'
 import Menu from '.'
 
-describe('<Menu />', () => {
-  it('should render the heading', () => {
-    render(<Menu />)
+it('should render the menu', () => {
+  renderWithTheme(<Menu />)
 
-    expect(screen.getByRole('heading', { name: /Menu/i })).toBeInTheDocument()
-  })
+  expect(screen.getByText(/Home/i)).toBeInTheDocument()
 })

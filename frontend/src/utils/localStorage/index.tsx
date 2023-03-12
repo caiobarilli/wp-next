@@ -6,7 +6,7 @@ export const getStorageItem = (key: string) => {
   return JSON.parse(data!)
 }
 
-export const setStorageItem = (key: string, value: string[]) => {
+export const setStorageItem = (key: string, value: string[] | boolean) => {
   if (typeof window === 'undefined') return
   const data = JSON.stringify(value)
   return window.localStorage.setItem(`${APP_KEY}_${key}`, data)

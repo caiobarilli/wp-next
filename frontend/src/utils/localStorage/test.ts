@@ -6,12 +6,9 @@ describe('getStorageItem()', () => {
   })
 
   it('should return item from localStorage', () => {
-    window.localStorage.setItem(
-      'FRONTEND_colorTheme',
-      JSON.stringify(['default'])
-    )
+    window.localStorage.setItem('FRONTEND_darkTheme', JSON.stringify(false))
 
-    expect(getStorageItem('colorTheme')).toStrictEqual(['default'])
+    expect(getStorageItem('darkTheme')).toStrictEqual(false)
   })
 })
 
@@ -21,10 +18,10 @@ describe('setStorageItem()', () => {
   })
 
   it('should set item in localStorage', () => {
-    setStorageItem('colorTheme', ['dark'])
+    setStorageItem('darkTheme', true)
 
-    expect(window.localStorage.getItem('FRONTEND_colorTheme')).toStrictEqual(
-      JSON.stringify(['dark'])
+    expect(window.localStorage.getItem('FRONTEND_darkTheme')).toStrictEqual(
+      JSON.stringify(true)
     )
   })
 })

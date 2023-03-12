@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import theme from 'styles/theme'
-import { darkTheme } from 'styles/dark'
+import dark from 'styles/dark'
 import GlobalStyle from 'styles/globalstyles'
 import { Context, ContextProvider } from 'utils/context'
 import { useContext } from 'react'
@@ -23,7 +23,7 @@ export default function App({ Component, pageProps, router }: CustomAppProps) {
 function AppWrapper({ Component, pageProps }: AppProps) {
   const { isDarkTheme } = useContext(Context)
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : theme}>
+    <ThemeProvider theme={isDarkTheme ? dark : theme}>
       <GlobalStyle />
       <Head>
         <title>Next Boilerplate</title>

@@ -1,4 +1,4 @@
-import styled, { css, DefaultTheme } from 'styled-components'
+import styled, { css, FrontendTheme } from 'styled-components'
 import media from 'styled-media-query'
 
 import { ButtonProps } from '.'
@@ -9,18 +9,18 @@ export type WrapperProps = { hasIcon: boolean } & Pick<
 >
 
 const WrapperModifiers = {
-  small: (theme: DefaultTheme) => css`
+  small: (theme: FrontendTheme) => css`
     height: 3rem;
     font-size: ${theme.font.sizes.xsmall};
   `,
 
-  medium: (theme: DefaultTheme) => css`
+  medium: (theme: FrontendTheme) => css`
     height: 4rem;
     font-size: ${theme.font.sizes.medium};
     padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
   `,
 
-  large: (theme: DefaultTheme) => css`
+  large: (theme: FrontendTheme) => css`
     height: 4.35rem;
     font-size: ${theme.font.sizes.medium};
     padding: 0 ${theme.spacings.medium};
@@ -31,7 +31,7 @@ const WrapperModifiers = {
     `}
   `,
 
-  withIcons: (theme: DefaultTheme) => css`
+  withIcons: (theme: FrontendTheme) => css`
     svg {
       width: 1.5rem;
 
@@ -45,7 +45,7 @@ const WrapperModifiers = {
     width: 100%;
   `,
 
-  minimal: (theme: DefaultTheme) => css`
+  minimal: (theme: FrontendTheme) => css`
     background: transparent;
     color: ${theme.colors.secondary};
 

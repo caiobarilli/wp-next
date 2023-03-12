@@ -1,4 +1,4 @@
-const darkTheme = {
+export default {
   grid: {
     container: '130rem',
     containerLarge: '150rem',
@@ -43,6 +43,4 @@ const darkTheme = {
     modal: 40,
     alwaysOnTop: 50
   }
-}
-
-export { darkTheme }
+} as const

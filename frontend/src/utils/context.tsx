@@ -25,10 +25,7 @@ export const ContextProvider: React.FunctionComponent<ProviderProps> = ({
 
   useEffect(() => {
     const data = getStorageItem(THEME_COLOR_KEY)
-
-    if (data) {
-      setIsDarkTheme(data)
-    }
+    if (data) setIsDarkTheme(data)
   }, [])
 
   const toggleTheme = () => {

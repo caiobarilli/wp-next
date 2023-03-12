@@ -22,16 +22,11 @@ interface ProviderProps {
 export const ContextProvider: React.FunctionComponent<ProviderProps> = ({
   children
 }) => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false)
+  const [isDarkTheme, setIsDarkTheme] = useState(isDarkMode())
 
   useEffect(() => {
     const data = getStorageItem(THEME_COLOR_KEY)
-
-    if (data) {
-      setIsDarkTheme(data)
-    } else {
-      setIsDarkTheme(isDarkMode())
-    }
+    if (data) setIsDarkTheme(data)
   }, [])
 
   const toggleTheme = () => {

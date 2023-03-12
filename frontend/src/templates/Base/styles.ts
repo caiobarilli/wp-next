@@ -1,24 +1,25 @@
 import styled, { css } from 'styled-components'
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  min-height: 100vh;
+`
+
+export const Header = styled.header`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
 `
 
 export const Content = styled.div`
-  ${({ theme }) => css`
-    margin-top: ${theme.spacings.xsmall};
-    flex: 1 0 auto;
-  `}
+  flex: 1 0 auto;
 `
 
-export const SectionFooter = styled.section`
+export const Footer = styled.footer`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.large};
-    padding-bottom: ${theme.spacings.xsmall};
-    padding-top: ${theme.spacings.xxlarge};
     color: ${theme.colors.secondary};
     background-color: ${theme.colors.primary};
   `}

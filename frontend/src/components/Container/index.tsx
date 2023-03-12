@@ -4,7 +4,7 @@ type ContainerProps = {
   larger?: boolean
 }
 
-export const Container = styled.main<Pick<ContainerProps, 'larger'>>`
+export const Container = styled.div<Pick<ContainerProps, 'larger'>>`
   ${({ theme, larger }) => css`
     width: 100%;
     ${larger

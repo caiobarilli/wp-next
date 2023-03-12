@@ -15,16 +15,16 @@ const Base = ({ children }: BaseProps) => {
   return (
     <S.Wrapper>
       <Container larger>
-        <TopNavigation />
-        <Logo />
-        <Menu />
+        <S.Header>
+          <TopNavigation />
+          <Logo />
+          <Menu />
+        </S.Header>
       </Container>
+
       <S.Content>{children}</S.Content>
-      <S.SectionFooter>
-        <Container>
-          <Footer />
-        </Container>
-      </S.SectionFooter>
+
+      <Footer />
     </S.Wrapper>
   )
 }

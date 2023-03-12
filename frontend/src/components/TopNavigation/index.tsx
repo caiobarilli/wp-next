@@ -7,9 +7,13 @@ const TopNavigation = () => {
   const { toggleTheme } = useContext(Context)
   return (
     <S.Wrapper>
-      <Button size="small" minimal={true} onClick={toggleTheme}>
-        Mudar tema
-      </Button>
+      <ul>
+        <li>
+          <Button size="small" minimal={true} onClick={toggleTheme}>
+            Mudar tema
+          </Button>
+        </li>
+      </ul>
     </S.Wrapper>
   )
 }

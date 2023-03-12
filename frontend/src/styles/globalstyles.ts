@@ -14,6 +14,35 @@ const GlobalStyles: GlobalStyleComponent<
   GlobalStylesProps,
   DefaultTheme
 > = createGlobalStyle`
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 100;
+    src: url('/fonts/roboto-light.woff2') format('woff2')
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/roboto-regular.woff2') format('woff2')
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: url('/fonts/roboto-italic.woff2') format('woff2')
+  }
+
+  @font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/fonts/roboto-bold.woff2') format('woff2')
+  }
+
   * {
     margin: 0;
     padding: 0;

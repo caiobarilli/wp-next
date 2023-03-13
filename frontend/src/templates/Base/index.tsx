@@ -1,9 +1,5 @@
-import Logo from 'components/Logo'
-import Menu from 'components/Menu'
-import TopNavigation from 'components/TopNavigation'
+import Header from 'components/Header'
 import Footer from 'components/Footer'
-
-import { Container } from 'components/Container'
 
 import * as S from './styles'
 
@@ -14,13 +10,7 @@ export type BaseProps = {
 const Base = ({ children }: BaseProps) => {
   return (
     <S.Wrapper>
-      <Container larger>
-        <S.Header>
-          <TopNavigation />
-          <Logo />
-          <Menu />
-        </S.Header>
-      </Container>
+      <Header />
 
       <S.Content>{children}</S.Content>
 

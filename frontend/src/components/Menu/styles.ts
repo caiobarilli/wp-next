@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.nav`
   display: flex;
@@ -15,4 +15,12 @@ export const MenuContainer = styled.ul`
 
 export const MenuItem = styled.li`
   margin: 0 20px;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    ${({ theme }) => css`
+      color: ${theme.colors.secondary};
+    `}
+  }
 `

@@ -7,13 +7,6 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `
 
-export const Header = styled.header`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-`
-
 export const Content = styled.div`
   flex: 1 0 auto;
 `

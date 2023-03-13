@@ -11,7 +11,6 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /Buy/i })).toHaveStyle({
       height: '4rem',
-      padding: '0.8rem 3.2rem',
       'font-size': '1.6rem'
     })
 
@@ -23,7 +22,6 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /Buy/i })).toHaveStyle({
       height: '3rem',
-      padding: '0.8rem',
       'font-size': '1.2rem'
     })
   })
@@ -33,7 +31,6 @@ describe('<Button />', () => {
 
     expect(screen.getByRole('button', { name: /Buy/i })).toHaveStyle({
       height: '4.35rem',
-      padding: '0 3.2rem',
       'font-size': '1.6rem'
     })
   })

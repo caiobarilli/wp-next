@@ -1,5 +1,4 @@
 import styled, { css, FrontendTheme } from 'styled-components'
-import media from 'styled-media-query'
 
 import { ButtonProps } from '.'
 
@@ -17,18 +16,11 @@ const WrapperModifiers = {
   medium: (theme: FrontendTheme) => css`
     height: 4rem;
     font-size: ${theme.font.sizes.medium};
-    padding: ${theme.spacings.xxsmall} ${theme.spacings.medium};
   `,
 
   large: (theme: FrontendTheme) => css`
     height: 4.35rem;
     font-size: ${theme.font.sizes.medium};
-    padding: 0 ${theme.spacings.medium};
-
-    ${media.greaterThan('medium')`
-    height: 5rem;
-      padding: ${theme.spacings.xxsmall} ${theme.spacings.xlarge};
-    `}
   `,
 
   withIcons: (theme: FrontendTheme) => css`
@@ -73,13 +65,6 @@ export const Wrapper = styled.button<WrapperProps>`
 
     font-family: ${theme.font.family};
     border-radius: ${theme.border.radius};
-    padding: ${theme.spacings.xxsmall};
-
-    color: ${theme.colors.white};
-
-    &:focus {
-      box-shadow: 0 0 0 3px ${theme.colors.secondary};
-    }
 
     ${!!size && WrapperModifiers[size](theme)}
     ${!!fullWidth && WrapperModifiers.fullWidth()}

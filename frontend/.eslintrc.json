@@ -1,0 +1,43 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true,
+        "node": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended",
+        "plugin:@next/next/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "prettier"
+    ],
+    "overrides": [
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/prop-types": "off", // Provide types statically using TypeScript
+      "react/react-in-jsx-scope": "off", // Disallow missing React when using JSX
+      "@typescript-eslint/explicit-module-boundary-types": "off", //Explicit types for function return values
+      "@typescript-eslint/no-non-null-assertion": "off", // does not use the strictNullChecks compiler option
+      "@typescript-eslint/no-unused-vars": "warn"
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+}

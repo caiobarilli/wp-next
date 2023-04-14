@@ -20,7 +20,6 @@ Boilerplate com recursos já previamente implementados para aumentar a produtivi
 
 <br/>
 
-
 ### Pré-requisitos
 #
 Para começar, certifique-se de ter o [NodeJS](https://nodejs.org/en/) no seu sistema.

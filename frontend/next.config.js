@@ -4,12 +4,12 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: ''
-      }
+    domains: [
+      'localhost',
+      '0.gravatar.com',
+      '1.gravatar.com',
+      '2.gravatar.com',
+      'secure.gravatar.com'
     ]
   },
   compiler: {

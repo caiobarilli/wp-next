@@ -1,3 +1,11 @@
-!.storybook
+
+# Ignore jest files
 !.jest
 !.snap
+
+# Ignore built files
+build/
+dist/
+
+# Ignore generated GraphQL code
+src/graphql/generated/

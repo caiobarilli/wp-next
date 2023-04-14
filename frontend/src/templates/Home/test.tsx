@@ -1,7 +1,14 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import Home from '.'
+import Home, { Post } from '.'
+
+const posts: Post[] = [
+  {
+    id: '231231',
+    title: 'sdasd'
+  }
+]
 
 jest.mock('components/Menu', () => {
   return {
@@ -32,10 +39,9 @@ jest.mock('components/Slider', () => {
 
 describe('<Home />', () => {
   it('should render the menu and footer', () => {
-    renderWithTheme(<Home />)
+    renderWithTheme(<Home posts={posts} />)
 
     expect(screen.getByTestId('Mock Menu')).toBeInTheDocument()
-    expect(screen.getByTestId('Mock Slider')).toBeInTheDocument()
     expect(screen.getByTestId('Mock Footer')).toBeInTheDocument()
   })
 })

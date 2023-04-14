@@ -5,7 +5,6 @@ type Theme = typeof theme
 
 declare module 'styled-components' {
   export interface DefaultTheme extends FrontendTheme {}
-
   export interface FrontendTheme {
     grid: {
       container: string

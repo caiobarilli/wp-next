@@ -1,29 +1,23 @@
-import Slider, { SlideProps } from 'components/Slider'
-import { Container } from 'components/Container'
 import Base from 'templates/Base'
+import Post, { PostProps } from 'components/Post'
+import { Container } from 'components/Container'
 import * as S from './styles'
 
-const slides: SlideProps[] = [
-  {
-    id: 1,
-    imageUrl: 'https://picsum.photos/1080'
-  },
-  {
-    id: 2,
-    imageUrl: 'https://picsum.photos/1080'
-  },
-  {
-    id: 3,
-    imageUrl: 'https://picsum.photos/1080'
-  }
-]
+export type HomeProps = {
+  posts: PostProps[]
+}
 
-const Home = () => {
+const Home = ({ posts }: HomeProps) => {
   return (
     <Base>
       <S.Wrapper>
         <Container>
-          <Slider slides={slides} />
+          <S.PostWrapper>
+            {posts &&
+              posts?.map((post) => {
+                return <Post post={post} key={post.id} />
+              })}
+          </S.PostWrapper>
         </Container>
       </S.Wrapper>
     </Base>

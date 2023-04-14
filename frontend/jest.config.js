@@ -17,7 +17,8 @@ const customJestConfig = {
     'src/utils/localStorage/*.ts(x)?',
     '!**/src/pages/**/*.tsx/**',
     '!**/src/styles/**/*.ts/**',
-    '!**/src/utils/**/*.tsx/**'
+    '!**/src/graphql/**/*.ts/**',
+    '!**/src/utils/**/*.ts(x)?/**'
   ],
   modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
   moduleNameMapper: {

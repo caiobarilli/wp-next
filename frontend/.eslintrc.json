@@ -35,6 +35,7 @@
       "@typescript-eslint/no-non-null-assertion": "off", // does not use the strictNullChecks compiler option
       "@typescript-eslint/no-unused-vars": "warn"
     },
+    "ignorePatterns" : ["/src/graphql/generated/*.ts"],
     "settings": {
       "react": {
         "version": "detect"

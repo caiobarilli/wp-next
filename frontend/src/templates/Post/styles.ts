@@ -1,17 +1,32 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.div``
+
+export const FeaturedImage = styled.div`
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30rem;
+  overflow: hidden;
+  margin-top: -11rem;
+  z-index: ${({ theme }) => theme.layers.zero};
+`
 
 export const Title = styled.h1`
   font-size: 4.5rem;
   margin-bottom: 2rem;
+  position: relative;
+  z-index: ${({ theme }) => theme.layers.base};
 `
 
 export const PostWrapper = styled.div`
-  width: 100%;
-  border-radius: 1rem;
-  background: ${({ theme }) => theme.colors.white};
-  padding: 1rem;
+  ${({ theme }) => css`
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1rem;
+    background: ${theme.colors.white};
+  `}
 `
 
 export const PostContent = styled.div`

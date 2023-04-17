@@ -1,12 +1,18 @@
 import { screen } from '@testing-library/react'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import Home, { Post } from '.'
+import Home from '.'
 
-const posts: Post[] = [
+const posts = [
   {
     id: '231231',
-    title: 'sdasd'
+    title: 'sdasd',
+    content: 'asdasd',
+    date: '2021-01-01',
+    slug: 'asdasd',
+    excerpt: 'asdasd',
+    featuredImageUrl: undefined,
+    avatarImageUrl: undefined
   }
 ]
 

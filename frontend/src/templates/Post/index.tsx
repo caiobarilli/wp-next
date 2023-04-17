@@ -5,26 +5,40 @@ import Image from 'next/image'
 import { Calendar } from '@styled-icons/boxicons-regular/Calendar'
 
 export type SinglePostProps = {
-  post: SingPostProps
+  post: SinglePost
 }
 
-export type SingPostProps = {
+type SinglePost = {
   id: string
   title: string
   content: string
   date: string
   slug: string
   excerpt: string
-  featuredImageUrl: string
+  featuredImageUrl: string | undefined
   avatarName: string
-  avatarImageUrl: string
+  avatarImageUrl: string | undefined
 }
 
 const SinglePost = ({ post }: SinglePostProps) => {
-  console.log(post)
+  const featuredImage =
+    post.featuredImageUrl !== undefined ? post.featuredImageUrl : ''
+  const avatarImage =
+    post.avatarImageUrl !== undefined ? post.avatarImageUrl : ''
 
   return (
     <Base>
+      {featuredImage && (
+        <S.FeaturedImage>
+          <Image
+            src={featuredImage}
+            alt={post.title}
+            width={1920}
+            height={1080}
+          />
+        </S.FeaturedImage>
+      )}
+
       <S.Wrapper>
         <Container>
           <S.Title> {post.title} </S.Title>
@@ -34,14 +48,16 @@ const SinglePost = ({ post }: SinglePostProps) => {
                 <Calendar />
                 {post.date}
               </S.PostDate>
-              <S.PostAuthor>
-                <Image
-                  src={post.avatarImageUrl}
-                  alt={post.avatarName}
-                  width={40}
-                  height={40}
-                />
-              </S.PostAuthor>
+              {avatarImage && (
+                <S.PostAuthor>
+                  <Image
+                    src={avatarImage}
+                    alt={post.avatarName}
+                    width={40}
+                    height={40}
+                  />
+                </S.PostAuthor>
+              )}
             </S.PostInfo>
             <S.PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
           </S.PostWrapper>

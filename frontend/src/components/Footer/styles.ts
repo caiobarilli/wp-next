@@ -4,6 +4,7 @@ export const Footer = styled.footer`
   ${({ theme }) => css`
     padding: 1.5rem 0;
     background: ${theme.colors.backgroundVariation1};
+    z-index: ${theme.layers.base};
   `}
 `
 

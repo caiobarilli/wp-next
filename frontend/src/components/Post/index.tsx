@@ -15,8 +15,7 @@ export type PostProps = {
   date: string
   slug: string
   excerpt: string
-  featuredImageUrl: string
-  avatarImageUrl: string
+  featuredImageUrl: string | undefined
 }
 
 const Post: React.ForwardRefRenderFunction<HTMLDivElement, PostsProps> = (
@@ -24,14 +23,16 @@ const Post: React.ForwardRefRenderFunction<HTMLDivElement, PostsProps> = (
   ref
 ) => {
   const { isDarkTheme } = useContext(Context)
+  const featuredImage =
+    post.featuredImageUrl !== undefined ? post.featuredImageUrl : ''
 
   return (
     <S.Wrapper darkTheme={isDarkTheme} ref={ref}>
       <S.WrapperContent>
         <Link href={`post/${post.slug}`}>
-          {post.featuredImageUrl ? (
+          {featuredImage ? (
             <Image
-              src={post.featuredImageUrl}
+              src={featuredImage}
               alt={post.title}
               width={400}
               height={300}

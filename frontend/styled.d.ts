@@ -52,6 +52,7 @@ declare module 'styled-components' {
     }
 
     layers: {
+      zero: number
       base: number
       menu: number
       overlay: number

@@ -1,11 +1,15 @@
-import { PostFragmentFragment } from 'graphql/generated/graphql'
 import { renderWithTheme } from 'utils/tests/helpers'
 
-import Post from '.'
+import Post, { PostProps } from '.'
 
-const post: PostFragmentFragment = {
+const post: PostProps = {
   id: 'TesteID_123',
-  title: 'Teste'
+  title: 'Teste',
+  content: 'Teste',
+  date: '2021-01-01',
+  slug: 'Teste',
+  excerpt: 'Teste',
+  featuredImageUrl: undefined
 }
 
 describe('<Post />', () => {

@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-export const Header = styled.header``
+export const Header = styled.header`
+  position: relative;
+  z-index: ${({ theme }) => theme.layers.menu};
+`
 
 export const HeaderWrapper = styled.div`
   display: flex;

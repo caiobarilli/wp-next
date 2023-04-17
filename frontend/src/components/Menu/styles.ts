@@ -22,10 +22,10 @@ export const MenuItem = styled.li`
   display: inline;
 
   a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 600;
     ${({ theme }) => css`
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 600;
       color: ${theme.colors.defaultText};
     `}
   }

@@ -3077,10 +3077,10 @@ export type MenuItemToMenuItemLinkableConnectionEdge = Edge & MenuItemLinkableCo
 
 /** Registered menu locations */
 export enum MenuLocationEnum {
-  /** Put the menu in the footer-menu location */
-  FooterMenu = 'FOOTER_MENU',
-  /** Put the menu in the header-menu location */
-  HeaderMenu = 'HEADER_MENU'
+  /** Put the menu in the main-menu location */
+  MainMenu = 'MAIN_MENU',
+  /** Put the menu in the social-menu location */
+  SocialMenu = 'SOCIAL_MENU'
 }
 
 /** The Type of Identifier used to fetch a single node. Default is "ID". To be used along with the "id" field. */
@@ -8062,13 +8062,11 @@ export type ThemeConnectionPageInfo = {
 export type ThemeMod = {
   __typename?: 'ThemeMod';
   /** The value of the custom logo in customizer option. */
-  footer_copyright_text?: Maybe<Scalars['String']>;
-  /** The value of the custom logo in customizer option. */
   logo_url?: Maybe<Scalars['String']>;
   /** The value of the page description from wordpress. */
-  text?: Maybe<Scalars['String']>;
+  page_description?: Maybe<Scalars['String']>;
   /** The value of the page title from wordpress. */
-  title?: Maybe<Scalars['String']>;
+  page_title?: Maybe<Scalars['String']>;
 };
 
 /** Any node that has a URI */
@@ -8497,6 +8495,8 @@ export type User = Commenter & DatabaseIdentifier & Node & UniformResourceIdenti
   revisions?: Maybe<UserToRevisionsConnection>;
   /** Connection between the User type and the UserRole type */
   roles?: Maybe<UserToUserRoleConnection>;
+  /** Whether the Toolbar should be displayed when the user is viewing the site. */
+  shouldShowAdminToolbar?: Maybe<Scalars['Boolean']>;
   /** The slug for the user. This field is equivalent to WP_User-&gt;user_nicename */
   slug?: Maybe<Scalars['String']>;
   /** The unique resource identifier path */

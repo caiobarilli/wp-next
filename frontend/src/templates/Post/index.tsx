@@ -1,23 +1,54 @@
 import Base from 'templates/Base'
 import { Container } from 'components/Container'
 import * as S from './styles'
-import { PostProps } from 'components/Post'
+import Image from 'next/image'
+import { Calendar } from '@styled-icons/boxicons-regular/Calendar'
 
 export type SinglePostProps = {
-  postBy: PostProps
+  post: SingPostProps
 }
 
-const Post = ({ postBy }: SinglePostProps) => {
-  console.log(postBy)
+export type SingPostProps = {
+  id: string
+  title: string
+  content: string
+  date: string
+  slug: string
+  excerpt: string
+  featuredImageUrl: string
+  avatarName: string
+  avatarImageUrl: string
+}
+
+const SinglePost = ({ post }: SinglePostProps) => {
+  console.log(post)
+
   return (
     <Base>
       <S.Wrapper>
         <Container>
-          <h1>{postBy.title}</h1>
+          <S.Title> {post.title} </S.Title>
+          <S.PostWrapper>
+            <S.PostInfo>
+              <S.PostDate>
+                <Calendar />
+                {post.date}
+              </S.PostDate>
+              <S.PostAuthor>
+                <Image
+                  src={post.avatarImageUrl}
+                  alt={post.avatarName}
+                  width={40}
+                  height={40}
+                />
+              </S.PostAuthor>
+            </S.PostInfo>
+            <S.PostContent dangerouslySetInnerHTML={{ __html: post.content }} />
+          </S.PostWrapper>
         </Container>
       </S.Wrapper>
     </Base>
   )
 }
 
-export default Post
+export default SinglePost

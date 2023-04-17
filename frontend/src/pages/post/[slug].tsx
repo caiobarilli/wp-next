@@ -8,13 +8,15 @@ import {
   QUERY_POST_BY_SLUG
 } from 'graphql/queries/posts'
 import { initializeApollo } from 'utils/apollo'
-import Post, { SinglePostProps } from 'templates/Post'
+import SinglePost, { SinglePostProps } from 'templates/Post'
 import { GetStaticProps } from 'next'
+import { postMapper } from 'utils/mapper'
+import { Post } from 'graphql/generated/graphql'
 
 const apolloClient = initializeApollo()
 
 export default function Index(props: SinglePostProps) {
-  return <Post {...props} />
+  return <SinglePost {...props} />
 }
 
 export const getStaticPaths = async () => {
@@ -45,7 +47,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     revalidate: 60,
     props: {
-      postBy: postBy
+      post: postMapper(postBy as Post)
     }
   }
 }

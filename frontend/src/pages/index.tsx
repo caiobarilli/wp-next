@@ -1,10 +1,11 @@
 import Home, { HomeProps } from 'templates/Home'
 import { initializeApollo } from 'utils/apollo'
-import { QUERY_POSTS } from 'graphql/queries/posts'
+import { QUERY_HOME } from 'graphql/queries/home'
 import {
-  GetPostsQuery,
-  GetPostsQueryVariables,
-  Post
+  HomeQuery,
+  HomeQueryVariables,
+  Post,
+  ThemeMod
 } from 'graphql/generated/graphql'
 import { postsMapper } from 'utils/mapper'
 
@@ -16,9 +17,9 @@ export async function getStaticProps() {
   const apolloClient = initializeApollo()
 
   const {
-    data: { posts }
-  } = await apolloClient.query<GetPostsQuery, GetPostsQueryVariables>({
-    query: QUERY_POSTS,
+    data: { posts, themeMod }
+  } = await apolloClient.query<HomeQuery, HomeQueryVariables>({
+    query: QUERY_HOME,
     variables: {
       first: 3
     },
@@ -28,6 +29,7 @@ export async function getStaticProps() {
   return {
     revalidate: 10,
     props: {
+      themeMod: themeMod as ThemeMod,
       posts: postsMapper(posts?.nodes as Post[])
     }
   }

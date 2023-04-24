@@ -14,6 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n  fragment PostContent on Post {\n    id\n    title\n    content\n    date\n    slug\n    excerpt\n    featuredImage {\n      node {\n        sourceUrl\n      }\n    }\n    author {\n      node {\n        avatar {\n          url\n        }\n        name\n        email\n      }\n    }\n  }\n": types.PostContentFragmentDoc,
+    "\n  query Home($first: Int!) {\n    themeMod {\n      logo_url\n      page_description\n      page_title\n    }\n    posts(first: $first) {\n      nodes {\n        ...PostContent\n      }\n    }\n  }\n  \n": types.HomeDocument,
     "\n  query GetPostBySlug($slug: String!) {\n    postBy(slug: $slug) {\n      ...PostContent\n    }\n  }\n  \n": types.GetPostBySlugDocument,
     "\n  query GetPosts($first: Int!) {\n    posts(first: $first) {\n      nodes {\n        ...PostContent\n      }\n    }\n  }\n  \n": types.GetPostsDocument,
     "\n  query GetAllPostsSlug {\n    posts {\n      nodes {\n        slug\n      }\n    }\n  }\n": types.GetAllPostsSlugDocument,
@@ -37,6 +38,10 @@ export function graphql(source: string): unknown;
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n  fragment PostContent on Post {\n    id\n    title\n    content\n    date\n    slug\n    excerpt\n    featuredImage {\n      node {\n        sourceUrl\n      }\n    }\n    author {\n      node {\n        avatar {\n          url\n        }\n        name\n        email\n      }\n    }\n  }\n"): (typeof documents)["\n  fragment PostContent on Post {\n    id\n    title\n    content\n    date\n    slug\n    excerpt\n    featuredImage {\n      node {\n        sourceUrl\n      }\n    }\n    author {\n      node {\n        avatar {\n          url\n        }\n        name\n        email\n      }\n    }\n  }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n  query Home($first: Int!) {\n    themeMod {\n      logo_url\n      page_description\n      page_title\n    }\n    posts(first: $first) {\n      nodes {\n        ...PostContent\n      }\n    }\n  }\n  \n"): (typeof documents)["\n  query Home($first: Int!) {\n    themeMod {\n      logo_url\n      page_description\n      page_title\n    }\n    posts(first: $first) {\n      nodes {\n        ...PostContent\n      }\n    }\n  }\n  \n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

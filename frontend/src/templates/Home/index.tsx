@@ -7,7 +7,7 @@ import { ThemeMod } from 'graphql/generated/graphql'
 
 export type HomeProps = {
   posts: PostProps[]
-  themeMod: ThemeMod
+  themeMod?: ThemeMod
 }
 
 const Home = ({ posts, themeMod }: HomeProps) => {

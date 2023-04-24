@@ -56,6 +56,15 @@ function custom_theme_require_plugins()
             'external_url'       => 'https://br.wordpress.org/plugins/classic-editor', // page of my plugin
             'force_deactivation' => true, // deactivate this plugin when the user switches to another theme
         ),
+
+        array(
+            'name'               => 'Safe SVG',
+            'slug'               => 'safe-svg',
+            'source'             => get_stylesheet_directory() . '/plugins/safe-svg.2.1.1.zip',
+            'required'           => false, // this plugin is required
+            'external_url'       => 'https://br.wordpress.org/plugins/safe-svg/', // page of my plugin
+            'force_deactivation' => true, // deactivate this plugin when the user switches to another theme
+        ),
     );
 
     $config = array( /* The array to configure TGM Plugin Activation */ );
